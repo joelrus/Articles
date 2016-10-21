@@ -51,12 +51,10 @@ public class Rectangle {
     //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="operacions">
     public double AreaRectangle(){
-        double area = base * altura;
-        return area;
+        return getBase() * getAltura();
     }
     public double PerimeterRectangle(){
-        double perimeter = (base*2) + (altura*2);
-        return perimeter;
+        return (getBase()*2) + (getAltura()*2);
     }
     //</editor-fold>
     //</editor-fold>

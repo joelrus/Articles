@@ -35,13 +35,12 @@ public class Square {
     }
     //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="operacions">
-    public double AreaSquare(double side){
-        double area = side * side;
-        return area;
+    public double AreaSquare(){
+        return getSide() * getSide();
     }
-    public double PerimeterSquare(double side){
-        double perimeter = side * 4;
-        return perimeter;
+    public double PerimeterSquare(){
+        return getSide() * 4;
+
     }
     //</editor-fold>
     //</editor-fold>

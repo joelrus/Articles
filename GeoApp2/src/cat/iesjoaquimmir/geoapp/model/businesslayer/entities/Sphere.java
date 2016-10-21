@@ -35,12 +35,10 @@ public class Sphere {
     //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="operacions">
     public double AreaSphere(){
-        double area = 4*Math.PI*Math.pow(radi, 2);
-        return area;
+        return 4*Math.PI*Math.pow(radi, 2);
     }
     public double PerimeterSphere(){
-        double perimeter = (4/3)*Math.PI*Math.pow(radi, 3);
-        return perimeter;
+        return (4/3)*Math.PI*Math.pow(radi, 3);
     }
     //</editor-fold>
     //</editor-fold>

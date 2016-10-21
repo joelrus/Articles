@@ -35,12 +35,10 @@ public class Cercle {
     //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="operacions">
     public double AreaCercle(){
-        double area = Math.pow(getRadi(), 2)*Math.PI;
-        return area;
+        return Math.pow(getRadi(), 2)*Math.PI;
     }
     public double PerimeterCercle(){
-        double perimeter = 2*Math.PI*getRadi();
-        return perimeter;
+        return 2*Math.PI*getRadi();
     }
     //</editor-fold>
     //</editor-fold>
