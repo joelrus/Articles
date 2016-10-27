@@ -12,12 +12,17 @@ package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
 public class Sphere {
     //<editor-fold defaultstate="collapsed" desc="Estat: atribut">
     private double radi = 1;
+    
+    private static double defecto=1;
     //</editor-fold>
  
     //<editor-fold defaultstate="collapsed" desc="Comportament: metodes">
     //<editor-fold defaultstate="collapsed" desc="Constructors">
     public Sphere(double radi){
         this.setRadi(radi);
+    }
+    public Sphere(){
+        this(defecto);
     }
     //</editor-fold>
     

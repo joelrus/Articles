@@ -12,12 +12,16 @@ package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
 public class Square {
     //<editor-fold defaultstate="collapsed" desc="Estat: atribut">
     private double side = 1;
+    private static double defecto=1;
     //</editor-fold>
  
     //<editor-fold defaultstate="collapsed" desc="Comportament: metodes">
     //<editor-fold defaultstate="collapsed" desc="Constructors">
     public Square(double side){
         this.setSide(side);
+    }
+    public Square(){
+        this(defecto);
     }
     //</editor-fold>
     

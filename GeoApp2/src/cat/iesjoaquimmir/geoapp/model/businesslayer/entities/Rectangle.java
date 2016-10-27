@@ -13,6 +13,9 @@ public class Rectangle {
     //<editor-fold defaultstate="collapsed" desc="Estat: atribut">
     private double base = 1;
     private double altura = 5;
+    
+    private static double based = 1;
+    private static double alturad = 1;
     //</editor-fold>
  
     //<editor-fold defaultstate="collapsed" desc="Comportament: metodes">
@@ -22,7 +25,10 @@ public class Rectangle {
         this.setAltura(altura);
     }
     public Rectangle(double base){
-        this.setBase(base);
+        this(base,alturad);
+    }
+    public Rectangle(){
+        this(based);
     }
     //</editor-fold>
     
