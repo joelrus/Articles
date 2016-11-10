@@ -202,11 +202,7 @@ public class Alumne {
         return String.format("\nHola, sóc en/la %s %s, %s\n",
                 getCognom(),getCognom2(),getNom());
     }
-    public void getTel(){
-        for (int i = 0; i < getTelefon().size(); i++) {
-            System.out.printf("El telefon %d: %s",i,getTelefon().get(i));
-        }
-    }
+
     public String getMayor(){
         if(getEdat()>=18){
             return String.format("\nHola, sóc en/la %s amb identificacio %s i tinc %d anys\n",

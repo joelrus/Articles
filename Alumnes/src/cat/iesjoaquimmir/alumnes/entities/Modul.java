@@ -86,4 +86,5 @@ public class Modul {
         return String.format("%s, %s, %d hores",getNom(),getDescripcio(),getHores());
     }
 //</editor-fold>
+    
 }
