@@ -193,7 +193,7 @@ public class Alumne {
         this.domicili = domicili;
     }
     //</editor-fold>
-        //<editor-fold defaultstate="collapsed" desc="Metodes d'objecte">
+    //<editor-fold defaultstate="collapsed" desc="Metodes d'objecte">
     public String getSalutacio(){
         return String.format("\nHola, sóc en/la %s amb identificacio %s i tinc %d anys\n",
                 getNom(),getDni(),getEdat());

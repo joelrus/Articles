@@ -97,10 +97,9 @@ public class Application {
                     telefon.add(input.next());
                     System.out.printf("\nDigues la edat: ");
                     edat = input.nextInt();
-                    System.out.printf("\nCuants moduls fas?: ");
-                    cont = input.nextInt();
                     modul.add(new Modul("M02","Sistemes operatius",200));
                     modul.add(new Modul("M03","Programació",324));
+                    modul.add(new Modul("M04",180));
                     Alumne al6 = new Alumne(nom,cognom,cognom2,dni,telefon,modul,edat);
                     System.out.printf("%s",al6.getSalutacio());
                     for (int i = 0; i < al6.getTelefon().size(); i++) {
@@ -138,7 +137,8 @@ public class Application {
                     provincia = input.next();
                     Domicili dom1 = new Domicili(carrer,numero,pis,codi_postal,poblacio,provincia);
                     Alumne al7 = new Alumne(nom,cognom,cognom2,dni,null,null,edat,dom1);
-                    
+                    System.out.printf("\nEl Domicili és %s",
+                                al7.getDomicili().getDomiciliAmigable());
                     break;
             }
         

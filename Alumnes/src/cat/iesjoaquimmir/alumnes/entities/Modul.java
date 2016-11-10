@@ -11,15 +11,20 @@ package cat.iesjoaquimmir.alumnes.entities;
  */
 public class Modul {
     //<editor-fold defaultstate="collapsed" desc="atributs">
-    public String nom;
-    public String descripcio;
-    public int hores;
+    private String nom;
+    private String descripcio;
+    private int hores;
+    
+    private static final String descr = "Llenguatge de marques";
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="constructors">
     public Modul(String nom, String descripcio, int hores) {
         this.setNom(nom);
         this.setDescripcio(descripcio);
         this.setHores(hores);
+    }
+    public Modul(String nom, int hores) {
+        this(nom,descr,hores);
     }
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="getters/setters">
@@ -37,6 +42,10 @@ public class Modul {
      * @param nom the nom to set
      */
     public void setNom(String nom) {
+        if (nom==null) {
+            throw new IllegalArgumentException(
+                String.format("El nom no pot ser null %s",nom));
+        }
         this.nom = nom;
     }
 
@@ -65,6 +74,10 @@ public class Modul {
      * @param hores the hores to set
      */
     public void setHores(int hores) {
+        if (hores<1) {
+            throw new IllegalArgumentException(
+                String.format("El modul no te el minim de hores %d",hores));
+        }
         this.hores = hores;
     }
 //</editor-fold>
