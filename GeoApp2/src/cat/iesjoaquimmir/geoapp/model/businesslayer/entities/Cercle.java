@@ -9,7 +9,7 @@ package cat.iesjoaquimmir.geoapp.model.businesslayer.entities;
  *
  * @author alumne
  */
-public class Cercle {
+public class Cercle extends Shape {
     //<editor-fold defaultstate="collapsed" desc="Estat: atribut">
     private double radi = 1;
     
@@ -18,11 +18,12 @@ public class Cercle {
  
     //<editor-fold defaultstate="collapsed" desc="Comportament: metodes">
     //<editor-fold defaultstate="collapsed" desc="Constructors">
-    public Cercle(double radi){
+    public Cercle(double radi,AlphaColor backgroundColor,AlphaColor foregroundColor){
+        super(backgroundColor,foregroundColor);
         this.setRadi(radi);
     }
     public Cercle(){
-        this(defecto);
+        this(defecto,null,null                                                                                                                );
     }
     //</editor-fold>
     

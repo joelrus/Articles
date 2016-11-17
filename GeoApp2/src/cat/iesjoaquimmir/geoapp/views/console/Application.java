@@ -9,6 +9,8 @@ import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Rectangle;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Cercle;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Sphere;
 import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Color;
+import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.Shape;
+import cat.iesjoaquimmir.geoapp.model.businesslayer.entities.AlphaColor;
 import java.util.Scanner;
 /**
  *
@@ -20,39 +22,43 @@ public class Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+     
     Scanner input = new Scanner(System.in);
         //<editor-fold defaultstate="collapsed" desc="menu">
-        System.out.printf("1.Cuadrat\n2. Rectangle(base)\n3. Rectangle complet\n4. Cercle\n5. Esfera\n6. Color\n7. String Color\n8. Color aleatori\nResposta: ");
-       int menu = input.nextInt();
-        switch (menu) {
+        int menu=0;
+        do{
+        System.out.printf("\n1.Cuadrat\n2. Cuadrat amb color random\n3. Rectangle(base)\n4. Rectangle complet\n5. Cercle\n6. Esfera\n7. Color\n8. String Color\n9. Color aleatori\n10. Surt\nResposta: ");
+        menu = input.nextInt();
+         switch (menu) {
             case 1 :
                 squareMethod();
                 break;
             case 2 :
-                rectangleMethod();
+                squareColor();
                 break;
             case 3 :
-                rectangleMethod2();
+                rectangleMethod();
                 break;
             case 4 :
-                cercleMethod();
+                rectangleMethod2();
                 break;
             case 5 :
-                sphereMethod();
+                cercleMethod();
                 break;
             case 6 :
-                colorMethod();
+                sphereMethod();
                 break;
             case 7 :
-                stringMethod();
+                colorMethod();
                 break;
             case 8 :
+                stringMethod();
+                break;
+            case 9 :
                 aleatoriMethod();
                 break;
-            default:
-                System.out.printf("La opcio que has escollit no es correcta ");
-        }
+         }
+        }while(menu!=10);
 //</editor-fold>
         
 
@@ -63,8 +69,23 @@ public class Application {
         System.out.printf("Digues el costat en cm: ");
         double costat = input.nextDouble();
        Square c1 = new Square(costat);
+        System.out.printf("El color de fons és: %s\n",c1.getBackgroundColor().toHexString());
+        System.out.printf("El color de la vora és: %s\n",c1.getForegroundColor().toHexString());
         System.out.printf("L'area és: %.2f cm\n",c1.AreaSquare());
         System.out.printf("El perimetre és: %.2f cm\n",c1.PerimeterSquare());
+        System.out.printf("El contador és: %d cm\n",Shape.getCounter());
+//</editor-fold>
+    }
+    private static void squareColor() {
+        //<editor-fold defaultstate="collapsed" desc="square">
+       Scanner input = new Scanner(System.in);
+        System.out.printf("Digues el costat en cm: ");
+        double costat = input.nextDouble();
+
+        AlphaColor acb = AlphaColor.getRandom();
+        AlphaColor acf = new AlphaColor(234,123,21,0.9);
+       Square c1 = new Square(costat,acb,acf);
+        System.out.printf("%s",c1.toString());
 //</editor-fold>
     }
     private static void rectangleMethod(){
@@ -75,6 +96,7 @@ public class Application {
        Rectangle r1 = new Rectangle(base);
         System.out.printf("L'area és: %.2f cm\n",r1.AreaRectangle());
         System.out.printf("El perimetre és: %.2f cm\n",r1.PerimeterRectangle());
+        System.out.printf("El contador és: %d cm\n",Shape.getCounter());
 //</editor-fold>
     }
     private static void rectangleMethod2(){
@@ -88,6 +110,7 @@ public class Application {
        Rectangle r1 = new Rectangle(base,altura);
         System.out.printf("L'area és: %.2f cm\n",r1.AreaRectangle());
         System.out.printf("El perimetre és: %.2f cm\n",r1.PerimeterRectangle());
+        System.out.printf("El contador és: %d cm\n",Shape.getCounter());
 //</editor-fold>
     }
     private static void cercleMethod(){
@@ -95,9 +118,10 @@ public class Application {
        Scanner input = new Scanner(System.in);
         System.out.printf("Digues el radi en cm: ");
         double radi = input.nextDouble();
-       Cercle ce1 = new Cercle(radi);
+       Cercle ce1 = new Cercle(radi,null,null);
         System.out.printf("L'area és: %.2f cm\n",ce1.AreaCercle());
         System.out.printf("El perimetre és: %.2f cm\n",ce1.PerimeterCercle());
+        System.out.printf("El contador és: %d cm\n",Shape.getCounter());
 //</editor-fold>
     }
     private static void sphereMethod(){
@@ -106,9 +130,10 @@ public class Application {
 
         System.out.printf("Digues el radi en cm: ");
         double radi2 = input.nextDouble();
-       Sphere sp1 = new Sphere(radi2);
+       Sphere sp1 = new Sphere(radi2,null,null);
         System.out.printf("El volum és: %.2f cm\n",sp1.AreaSphere());
         System.out.printf("El perimetre és: %.2f cm\n",sp1.PerimeterSphere());
+        System.out.printf("El contador és: %d cm\n",Shape.getCounter());
 //</editor-fold>
     }
     
@@ -122,9 +147,9 @@ public class Application {
         int green = input.nextInt();
         System.out.printf("Digues el valor del blue: ");
         int blue = input.nextInt();
-       Color col1 = new Color(red,green,blue);
+       Color col1 = new AlphaColor(red,green,blue);
         System.out.printf("El color final és R:%d G:%d B:%d\n",col1.getRed(),col1.getGreen(),col1.getBlue());
-        Color col2 = new Color();
+        Color col2 = new AlphaColor(red,green,blue);
         System.out.printf("El color sense parametres és R:%d G:%d B:%d\n",col2.getRed(),col2.getGreen(),col2.getBlue());
         System.out.printf("Colors creats: %d",col1.getCounter());
 //</editor-fold>

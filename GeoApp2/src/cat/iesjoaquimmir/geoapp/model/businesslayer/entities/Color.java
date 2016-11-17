@@ -10,7 +10,7 @@ import java.util.Random;
  *
  * @author alumne
  */
-public class Color {
+public abstract class Color {
    
     //<editor-fold defaultstate="collapsed" desc="Estat: atribut">
     public int red;
@@ -45,7 +45,7 @@ public class Color {
         return counter;
     }
     
-    public static Color fromHexString(String color){
+    public static AlphaColor fromHexString(String color){
         if (color==null){
             throw new NullPointerException("Es obligatori indicar una cadena de text");
         }
@@ -53,17 +53,18 @@ public class Color {
             throw new IllegalArgumentException(
                     String.format("El text %s no te format hexadecimal", color));
         }
-        return new Color(Integer.parseInt(color.substring(1,3), 16),
+        return new AlphaColor(Integer.parseInt(color.substring(1,3), 16),
                         Integer.parseInt(color.substring(3,5),16),
                         Integer.parseInt(color.substring(5,7),16));
     }
     
     
     
-    public static Color getRandom(){
+    public static AlphaColor getRandom(){
         Random aleatori = new Random();
-        return new Color(aleatori.nextInt(256),aleatori.nextInt(256),aleatori.nextInt(256));
+        return new AlphaColor(aleatori.nextInt(256),aleatori.nextInt(256),aleatori.nextInt(256));
     }
+   
 //</editor-fold>
     
     //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
@@ -143,8 +144,15 @@ public class Color {
         getRed(), getGreen(), getBlue());
         
     }
+    
+    @Override
+    public String toString() {
+        return String.format("RGB(%03d,%03d,%03d) HEX:#%02X%02X%02X", getRed(), getGreen(), getBlue(),getRed(), getGreen(), getBlue()); //To change body of generated methods, choose Tools | Templates.
+    }
     //</editor-fold>
     //</editor-fold>
+
+    
 
     
 }

@@ -5,7 +5,9 @@
         <group>
             <file>file:/home/alumne/NetBeansProjects/GeoApp2/src/cat/iesjoaquimmir/geoapp/views/console/Application.java</file>
             <file>file:/home/alumne/NetBeansProjects/GeoApp2/src/cat/iesjoaquimmir/geoapp/model/businesslayer/entities/Color.java</file>
-            <file>file:/home/alumne/NetBeansProjects/GeoApp2/src/cat/iesjoaquimmir/geoapp/model/businesslayer/entities/Cercle.java</file>
+            <file>file:/home/alumne/NetBeansProjects/GeoApp2/src/cat/iesjoaquimmir/geoapp/model/businesslayer/entities/AlphaColor.java</file>
+            <file>file:/home/alumne/NetBeansProjects/GeoApp2/src/cat/iesjoaquimmir/geoapp/model/businesslayer/entities/Shape.java</file>
+            <file>file:/home/alumne/NetBeansProjects/GeoApp2/src/cat/iesjoaquimmir/geoapp/model/businesslayer/entities/Square.java</file>
         </group>
     </open-files>
 </project-private>
